@@ -22,8 +22,10 @@
    
 实际运行时，只需要传入上述3种参数。例如，文本分类任务：
 
-训练：script/text_classifier.sh train
+cd到根目录：cd allennlp-as-a-library-example/ 
 
-测试：script/text_classifier.sh test
+训练：scripts/text_classifier.sh train
 
-服务：script/text_classifier.sh service
+测试：scripts/text_classifier.sh test
+
+服务：scripts/text_classifier.sh service
