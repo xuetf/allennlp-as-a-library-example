@@ -6,7 +6,7 @@ task_name=text_classifier
 if [ $mode == 'train' ]
     then
         python3 -m allennlp.run \
-        train experiments/${task_name}/venue_classifier_bert.json \
+        train experiments/${task_name}/venue_classifier_local.json \
         -s outputs/${task_name} \
         -f \
         --include-package librarys
