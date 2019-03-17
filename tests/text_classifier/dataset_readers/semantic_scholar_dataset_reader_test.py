@@ -9,7 +9,7 @@ class TestSemanticScholarDatasetReader(AllenNlpTestCase):
     def test_read_from_file(self):
 
         reader = SemanticScholarDatasetReader()
-        instances = ensure_list(reader.read('tests/fixtures/s2_papers.jsonl'))
+        instances = ensure_list(reader.read('tests/text_classifier/fixtures/s2_papers.jsonl'))
 
         instance1 = {"title": ["Interferring", "Discourse", "Relations", "in", "Context"],
                      "abstract": ["We", "investigate", "various", "contextual", "effects"],

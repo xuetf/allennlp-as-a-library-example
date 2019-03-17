@@ -1,41 +1,35 @@
-A simple example for how to build your own model using AllenNLP as a dependency.  An explanation
-of all of the code in this repository is given in the [part 1](https://github.com/allenai/allennlp/blob/master/tutorials/getting_started/predicting_paper_venues/predicting_paper_venues_pt1.md) and [part 2](https://github.com/allenai/allennlp/blob/master/tutorials/getting_started/predicting_paper_venues/predicting_paper_venues_pt2.md) of the AllenNLP
-tutorial.
+# Different NLP task using AllenNLP to implement
+    
+整理了使用AllenNLP实现不同NLP任务的代码。大部分来自于AllenNLP的默认实现，把代码抽取出来并重新组织。
 
-There are two main pieces of code you need to write in order to make a new model: a
-`DatasetReader` and a `Model`.  In this repository, we constructed a `DatasetReader` for reading
-academic papers formatted as a JSON lines file (you can see an example of the data in
-[`tests/fixtures/s2_papers.jsonl`](tests/text_classifier/fixtures/s2_papers.jsonl)).  We then constructed a model
-to classify the papers given some label (which we specified as the paper's venue in the
-`DatasetReader`).  Finally, we added a script to use AllenNLP's training commands from a
-third-party repository, and an experiment configuration for running a real model on real data.
+## NLP Tasks
 
-To train this model, after setting up your development environment by running
-`pip install -r requirements.txt`, you run:
+- 文本分类任务（Text Classifier)
 
-```bash
-allennlp train experiments/venue_classifier.json -s /tmp/your_output_dir_here --include-package my_library
+    - 1. [参考](https://github.com/allenai/allennlp-as-a-library-example) 
+    
+    - 2. 将Paper划分到不同领域（ACL,ML）。
 
-# train
-python3 -m allennlp.run train experiments/venue_classifier.json -s /demo/output --include-package my_library
 
-# test and show
-python3 -m allennlp.service.server_simple \
-    --archive-path tmp/model.tar.gz \
-    --predictor paper-classifier \
-    --include-package my_library \
-    --title "Academic Paper Classifier" \
-    --field-name title \
-    --field-name paperAbstract
+- 词性标注/句法结构分析 (Pos Tagger/Phrase Structure Parsing)
 
-# test: 自定义展示模板
-python3 -m allennlp.service.server_simple \
-    --archive-path tmp/model.tar.gz \
-    --predictor paper-classifier \
-    --include-package my_library \
-    --static-dir static_html
+    - 1. 对语句进行词性标注或进行短语结构分析。
+    - 2. 参考AllenNLP的默认实现。
+   
+    
+- 未完待续...
 
-```
 
-This example was written by the AllenNLP team.  You can see a similar example repository written
-by others [here](https://github.com/recognai/get_started_with_deep_learning_for_text_with_allennlp).
+## Project Structure
+
+- data：各任务训练、验证、测试数据等。
+
+- experiments：各任务训练的.json配置文件。
+
+- librarys: 各任务代码，主要包括数据读取/模型/预测器(对外提供服务时使用)
+
+- scripts: 各任务实际的训练/测试/服务shell脚本，直接运行即可。
+
+- tests: 各任务的单元测试代码。
+    
+   
