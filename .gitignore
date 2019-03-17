@@ -1,0 +1,6 @@
+*.pyc
+data/
+.mypy_cache/
+.pytest_cache/
+.idea/
+outputs/
