@@ -1,7 +1,9 @@
 # pylint: disable=invalid-name,protected-access
 from allennlp.common.testing import ModelTestCase
 
+from libraries import AcademicPaperClassifier # important! registered
 
+# python3 -m unittest tests/text_classifier/models/academic_paper_classifier_test.py
 class AcademicPaperClassifierTest(ModelTestCase):
     def setUp(self):
         super(AcademicPaperClassifierTest, self).setUp()
@@ -10,3 +12,4 @@ class AcademicPaperClassifierTest(ModelTestCase):
 
     def test_model_can_train_save_and_load(self):
         self.ensure_model_can_train_save_and_load(self.param_file)
+

@@ -1,1 +1,0 @@
-from librarys.pos_tagger.models import crf_tagger

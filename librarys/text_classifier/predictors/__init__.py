@@ -1,1 +1,0 @@
-from librarys.text_classifier.predictors.paper_classifier_predictor import PaperClassifierPredictor

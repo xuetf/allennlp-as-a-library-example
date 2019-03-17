@@ -1,0 +1,1 @@
+from libraries.text_classifier.models.academic_paper_classifier import AcademicPaperClassifier

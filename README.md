@@ -1,4 +1,4 @@
-# Different NLP task using AllenNLP to implement
+# NLP tasks using AllenNLP to implement
     
 整理了使用AllenNLP实现不同NLP任务的代码。大部分来自于AllenNLP的默认实现，把代码抽取出来并重新组织。
 
@@ -8,7 +8,7 @@
 
     - 1. [参考](https://github.com/allenai/allennlp-as-a-library-example) 
     
-    - 2. 将Paper划分到不同领域（ACL,ML）。
+    - 2. 将Paper划分到不同领域（ACL,ML,AI）。
 
 
 - **词性标注/句法结构分析** (Pos Tagger/Phrase Structure Parsing)

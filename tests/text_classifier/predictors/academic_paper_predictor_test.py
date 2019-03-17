@@ -5,9 +5,11 @@ from pytest import approx
 from allennlp.models.archival import load_archive
 from allennlp.predictors import Predictor
 
+from libraries import AcademicPaperClassifier
 # required so that our custom model + predictor + dataset reader
 # will be registered by name
 
+# python3 -m unittest tests/text_classifier/predictors/academic_paper_predictor_test.py
 class TestPaperClassifierPredictor(TestCase):
     def test_uses_named_inputs(self):
         inputs = {
@@ -24,7 +26,7 @@ class TestPaperClassifierPredictor(TestCase):
             )
         }
 
-        archive = load_archive('tests/fixtures/model.tar.gz')
+        archive = load_archive('tests/text_classifier/fixtures/model.tar.gz')
         predictor = Predictor.from_archive(archive, 'paper-classifier')
 
         result = predictor.predict_json(inputs)

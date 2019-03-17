@@ -2,8 +2,9 @@
 from allennlp.common.testing import AllenNlpTestCase
 from allennlp.common.util import ensure_list
 
-from librarys import SemanticScholarDatasetReader
+from libraries import SemanticScholarDatasetReader
 
+# python3 -m unittest tests/text_classifier/dataset_readers/semantic_scholar_dataset_reader_test.py
 
 class TestSemanticScholarDatasetReader(AllenNlpTestCase):
     def test_read_from_file(self):

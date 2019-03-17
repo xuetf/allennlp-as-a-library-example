@@ -1,0 +1,1 @@
+from libraries.pos_tagger.predictors.sentence_tagger import SentenceTaggerPredictor
