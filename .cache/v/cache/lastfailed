@@ -1,6 +1,0 @@
-{
-  "tests/pos_tagger/dataset_readers/conll2000_dataset_reader_test.py": true, 
-  "tests/text_classifier/dataset_readers/semantic_scholar_dataset_reader_test.py": true, 
-  "tests/text_classifier/models/academic_paper_classifier_test.py": true, 
-  "tests/text_classifier/predictors/predictor_test.py": true
-}

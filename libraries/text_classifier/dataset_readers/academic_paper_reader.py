@@ -15,7 +15,7 @@ logger = logging.getLogger(__name__)  # pylint: disable=invalid-name
 
 
 @DatasetReader.register("s2_papers")
-class SemanticScholarDatasetReader(DatasetReader):
+class AcademicPaperReader(DatasetReader):
     """
     Reads a JSON-lines file containing papers from the Semantic Scholar database, and creates a
     dataset suitable for document classification using these papers.

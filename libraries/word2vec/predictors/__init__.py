@@ -1,0 +1,2 @@
+from libraries.word2vec.predictors.synonyms_predictor import SynonymsPredictor
+from libraries.word2vec.predictors.simlex_predictor import SimlexPredictor

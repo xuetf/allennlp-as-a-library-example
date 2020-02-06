@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
 mode=$1
-task_name=text_classifier
+task_name=word2vec
 
 if [ $mode == 'train' ]
     then
         python3 -m allennlp.run \
-        train configs/${task_name}/venue_classifier_local.json \
+        train configs/${task_name}/sgns_text8.json \
         -s outputs/${task_name} \
         -f \
         --include-package libraries
@@ -22,10 +22,9 @@ elif [ $mode == 'service' ]
     then
         python3 -m allennlp.service.server_simple \
         --archive-path outputs/${task_name}/model.tar.gz \
-        --predictor paper-classifier \
+        --predictor synonyms_predictor \
         --include-package libraries \
-        --title "Academic Paper Classifier" \
-        --field-name title \
-        --field-name paperAbstract
+        --title "Wor2vec" \
+        --field-name word \
 
 fi

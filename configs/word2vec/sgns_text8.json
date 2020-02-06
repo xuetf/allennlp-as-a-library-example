@@ -1,0 +1,37 @@
+{
+  "dataset_reader": {
+    "type": "simple_skip_gram_text8",
+    "window_size": 5,
+    "lazy": false,
+  },
+  "vocabulary": {
+    "min_count": {
+      "token_target": 5,
+      "token_context": 5
+    }
+  },
+  "train_data_path": "data/word2vec/text8/text8",
+  "model": {
+    "type": "skip_gram_negative_sampling",
+    "embedding_target": {
+      "type": "embedding",
+      "embedding_dim": 256,
+      "num_embeddings": 100000,
+    },
+    "embedding_context": {
+      "type": "embedding",
+      "embedding_dim": 256,
+      "num_embeddings": 100000
+    }
+  },
+  "iterator": {
+    "type": "basic",
+    "batch_size": 256
+  },
+
+  "trainer": {
+    "optimizer": "adam",
+    "num_epochs": 5,
+    "cuda_device": -1
+  }
+}

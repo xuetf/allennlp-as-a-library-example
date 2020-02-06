@@ -6,7 +6,7 @@ task_name=pos_tagger
 if [ $mode == 'train' ]
     then
         python3 -m allennlp.run \
-        train experiments/${task_name}/experiment_conll2000.json \
+        train configs/${task_name}/experiment_conll2000.json \
         -s outputs/${task_name} \
         --include-package libraries \
         -f

@@ -2,14 +2,15 @@
 from allennlp.common.testing import AllenNlpTestCase
 from allennlp.common.util import ensure_list
 
-from libraries import SemanticScholarDatasetReader
+from libraries import AcademicPaperReader
 
 # python3 -m unittest tests/text_classifier/dataset_readers/semantic_scholar_dataset_reader_test.py
 
-class TestSemanticScholarDatasetReader(AllenNlpTestCase):
+
+class TestAcademicPaperReader(AllenNlpTestCase):
     def test_read_from_file(self):
 
-        reader = SemanticScholarDatasetReader()
+        reader = AcademicPaperReader()
         instances = ensure_list(reader.read('tests/text_classifier/fixtures/s2_papers.jsonl'))
 
         instance1 = {"title": ["Interferring", "Discourse", "Relations", "in", "Context"],

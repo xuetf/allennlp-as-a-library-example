@@ -1,0 +1,2 @@
+from libraries.word2vec.models.skip_gram_model import SkipGramModel
+from libraries.word2vec.models.skip_gram_negative_sampling_model import SkipGramNegativeSamplingModel

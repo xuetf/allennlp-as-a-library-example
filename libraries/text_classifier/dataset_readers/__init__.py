@@ -1,1 +1,1 @@
-from libraries.text_classifier.dataset_readers.semantic_scholar_papers import SemanticScholarDatasetReader
+from libraries.text_classifier.dataset_readers.academic_paper_reader import AcademicPaperReader
