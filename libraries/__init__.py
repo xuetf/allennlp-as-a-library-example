@@ -1,15 +1,8 @@
 # text_classifier
-from libraries.text_classifier.dataset_readers import *
-from libraries.text_classifier.models import *
-from libraries.text_classifier.predictors import *
-
+from libraries.text_classifier import *
 
 # pos_tagger
-from libraries.pos_tagger.dataset_readers import *
-from libraries.pos_tagger.models import *
-from libraries.pos_tagger.predictors import *
+from libraries.pos_tagger import *
 
 # word2vec
-from libraries.word2vec.dataset_readers import *
-from libraries.word2vec.models import *
-from libraries.word2vec.predictors import *
+from libraries.word2vec import *

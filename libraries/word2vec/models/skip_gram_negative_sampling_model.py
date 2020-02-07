@@ -38,7 +38,7 @@ class SkipGramNegativeSamplingModel(Model):
         else:
             print('You need to construct vocab from instances to record the token count statistics')
 
-    def forward(self, token_target, token_context):
+    def forward(self, token_target, token_context, negative_context=None):
         batch_size = token_context.shape[0]
 
         # Calculate loss for positive examples
@@ -47,13 +47,14 @@ class SkipGramNegativeSamplingModel(Model):
         inner_positive = torch.mul(embedded_target, embedded_context).sum(dim=1)
         log_prob = F.logsigmoid(inner_positive)
 
-        # Generate negative examples, not good, write in iterator is proper
-        negative_context = np.random.choice(a=self.vocab.get_vocab_size('token_target'),
-                                        size=batch_size * self.neg_samples,
-                                        p=self.neg_sample_probs)
-        negative_context = torch.LongTensor(negative_context).view(batch_size, self.neg_samples)
-        if self.cuda_device > -1:
-            negative_context = negative_context.to(self.cuda_device)
+        if negative_context is None:
+            # Generate negative examples, not good, write in iterator is proper
+            negative_context = np.random.choice(a=self.vocab.get_vocab_size('token_target'),
+                                            size=batch_size * self.neg_samples,
+                                            p=self.neg_sample_probs)
+            negative_context = torch.LongTensor(negative_context).view(batch_size, self.neg_samples)
+            if self.cuda_device > -1:
+                negative_context = negative_context.to(self.cuda_device)
 
         # Subtract loss for negative examples
         embedded_negative_context = self.embedding_context(negative_context)

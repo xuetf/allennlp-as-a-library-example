@@ -1,0 +1,1 @@
+from libraries.word2vec.iterators.skip_gram_iterator import SkipGramIterator
