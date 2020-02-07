@@ -16,17 +16,17 @@
     "embedding_target": {
       "type": "embedding",
       "embedding_dim": 256,
-      "num_embeddings": 100000,
+      "vocab_namespace": "token_target"  // based on the vocabulary to obtain num_embedding
     },
     "embedding_context": {
       "type": "embedding",
       "embedding_dim": 256,
-      "num_embeddings": 100000
+      "vocab_namespace": "token_context" // based on the vocabulary to obtain num_embedding
     }
   },
   "iterator": {
-    "type": "basic",
-    "batch_size": 256
+      "type": "basic",
+      "batch_size": 256
   },
 
   "trainer": {
