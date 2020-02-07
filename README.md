@@ -16,6 +16,8 @@
     - 1. 对语句进行词性标注或进行短语结构分析。
     - 2. 参考AllenNLP的默认实现。
    
+- **预训练模型** (Word2Vec)
+    - 1. 简易版实现
     
 - 未完待续...
 
@@ -24,12 +26,12 @@
 
 - data：各任务训练、验证、测试数据等。
 
-- experiments：各任务训练的.json配置文件，训练的核心入口文件。
+- configs：各任务训练的.json配置文件，训练的核心入口文件。
 
-- librarys: 各任务代码，主要包括数据读取/模型/预测器(对外提供服务时使用)
+- libraries: 各任务代码，主要包括数据读取/模型/预测器(对外提供服务时使用)
 
 - tests: 各任务的单元测试代码。
     
 - outputs：各任务训练时的输出，例如checkpoint，vocabulary等。在线服务,tensorboard查看等都需要基于该文件夹。
    
-- scripts: 各任务实际的训练/测试/服务shell脚本，直接运行即可。
+- scripts: 各任务实际的训练/测试/服务shell脚本，直接运行即可。 e.g., ./script/{task_name} train
